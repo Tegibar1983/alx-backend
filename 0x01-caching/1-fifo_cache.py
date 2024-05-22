@@ -5,13 +5,15 @@ BasicCaching = __import__('base_caching').BaseCaching
 
 
 class FIFOCache(BasicCaching):
-    """ FIFOCache class
+    """FIFOCache class
     """
     def __init__(self):
+        """__init__ function
+        """
         super().__init__()
 
     def put(self, key, item):
-        """ put function
+        """put function
 
         Args:
             key ([type]): [description]
@@ -20,7 +22,7 @@ class FIFOCache(BasicCaching):
         if key and item:
             self.cache_data[key] = item
         if len(self.cache_data) > self.MAX_ITEMS:
-                        print("DISCARD: {}".format(list(self.cache_data.keys())[0]))
+            print("DISCARD: {}".format(list(self.cache_data.keys())[0]))
             del self.cache_data[list(self.cache_data.keys())[0]]
 
     def get(self, key):
@@ -29,4 +31,4 @@ class FIFOCache(BasicCaching):
         Args:
             key ([type]): [description]
         """
-                return self.cache_data.get(key) if key in self.cache_data else None
+        return self.cache_data.get(key) if key in self.cache_data else None
