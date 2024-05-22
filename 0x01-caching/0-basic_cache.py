@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """0-basic_cache module
 """
-BaseCaching = __import__('base_caching').BaseCaching
+BasicCaching = __import__('base_caching').BaseCaching
 
-class BasicCache(BaseCaching):
+
+class BasicCache(BasicCaching):
     """BasicCache class
     """
     def put(self, key, item):
