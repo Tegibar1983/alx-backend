@@ -7,6 +7,7 @@ app = Flask(__name__)
 babel = Babel(app)
 """ instantiate the Babel object """
 
+
 class Config(object):
     """ config class """
     LANGUAGES = ['en', 'fr']
@@ -21,7 +22,7 @@ app.config.from_object(Config)
 @app.route('/')
 def root():
     """ basic Flask app """
-    return render_template('2-index.html')
+    return render_template("2-index.html")
 
 
 @babel.localeselector
